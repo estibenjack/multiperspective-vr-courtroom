@@ -3,6 +3,7 @@ using UnityEngine;
 public class RoleSelectionUI : MonoBehaviour
 {
     [SerializeField] private CourtroomSession courtroomSession;
+    [SerializeField] private RoleBriefingUI roleBriefingUI;
 
     private CourtroomRole selectedRole;
     private bool hasSelectedRole;
@@ -30,6 +31,13 @@ public class RoleSelectionUI : MonoBehaviour
         }
 
         courtroomSession.StartSession(selectedRole);
+        roleBriefingUI.ShowBriefing(selectedRole);
         gameObject.SetActive(false);
+    }
+
+    public void ShowMenu()
+    {
+        hasSelectedRole = false;
+        gameObject.SetActive(true);
     }
 }
