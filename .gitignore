@@ -24,3 +24,10 @@
 # Operating system files
 .DS_Store
 Thumbs.db
+
+# .NET backend build output
+**/bin/
+**/obj/
+
+# Keep backend project files
+!Backend/**/*.csproj
